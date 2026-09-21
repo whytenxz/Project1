@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{cdd6bab5-d2f7-413a-86c4-7abd588cc08b}</ProjectGuid>
+    <RootNamespace>Project1</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v145</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)x64\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)x64\$(Configuration)\Project1\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)x64\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)x64\$(Configuration)\Project1\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)nerv\sdk\includes\protobufs\include;$(ProjectDir)thirdparty\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)nerv\sdk\includes\protobufs\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libprotobufd.lib;d3d11.lib;dxgi.lib;d3dcompiler.lib;windowscodecs.lib;winhttp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)nerv\sdk\includes\protobufs\include;$(ProjectDir)thirdparty\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)nerv\sdk\includes\protobufs\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libprotobuf.lib;d3d11.lib;dxgi.lib;d3dcompiler.lib;windowscodecs.lib;winhttp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)nerv\sdk\includes\protobufs\include;$(ProjectDir)thirdparty\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)nerv\sdk\includes\protobufs\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libprotobufd.lib;d3d11.lib;dxgi.lib;d3dcompiler.lib;windowscodecs.lib;winhttp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)nerv\sdk\includes\protobufs\include;$(ProjectDir)thirdparty\lua;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(ProjectDir)nerv\sdk\includes\protobufs\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libprotobuf.lib;d3d11.lib;dxgi.lib;d3dcompiler.lib;windowscodecs.lib;winhttp.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="manual_map_init.cpp" />
+    <ClCompile Include="cs2\esp.cpp" />
+    <ClCompile Include="cs2\memory.cpp" />
+    <ClCompile Include="cs2\legitbot.cpp" />
+    <ClCompile Include="cs2\bhop.cpp" />
+    <ClCompile Include="cs2\menu_input.cpp" />
+    <ClCompile Include="cs2\walkbot\walkbot.cpp" />
+    <ClCompile Include="cs2\walkbot\nav\micropather.cpp" />
+    <ClCompile Include="cs2\walkbot\nav\nav_area.cpp" />
+    <ClCompile Include="cs2\walkbot\nav\nav_buffer.cpp" />
+    <ClCompile Include="cs2\walkbot\nav\nav_file.cpp" />
+    <ClCompile Include="cs2\walkbot\nav\nav_hiding_spot.cpp" />
+    <ClCompile Include="cs2\view.cpp" />
+    <ClCompile Include="cs2\streamer_mode.cpp" />
+    <ClCompile Include="cs2\antiflash.cpp" />
+    <ClCompile Include="cs2\night_mode.cpp" />
+    <ClCompile Include="cs2\skybox_tint.cpp" />
+    <ClCompile Include="cs2\world_modulation.cpp" />
+    <ClCompile Include="cs2\thirdperson.cpp" />
+    <ClCompile Include="cs2\tp_glitch.cpp" />
+    <ClCompile Include="cs2\chams.cpp" />
+    <ClCompile Include="cs2\agent_changer.cpp" />
+    <ClCompile Include="cs2\tracers.cpp" />
+    <ClCompile Include="cs2\players.cpp" />
+    <ClCompile Include="cs2\model_changer.cpp" />
+    <ClCompile Include="Frontend\Framework\MenuFramework.cpp" />
+    <ClCompile Include="Frontend\Menu\Menu.cpp" />
+    <ClCompile Include="Frontend\Menu\SkinsTab.cpp" />
+    <ClCompile Include="Frontend\Menu\PlayersTab.cpp" />
+    <ClCompile Include="Frontend\Menu\LuaTab.cpp" />
+    <ClCompile Include="Frontend\Steam\SteamAvatars.cpp" />
+    <ClCompile Include="Frontend\Renderer\Renderer.cpp" />
+    <ClCompile Include="nerv\nerv_init.cpp" />
+    <ClCompile Include="nerv\hooks\skin_hooks.cpp" />
+    <ClCompile Include="nerv\hooks\chams_hooks.cpp" />
+    <ClCompile Include="nerv\hooks\world_hooks.cpp" />
+    <ClCompile Include="nerv\features\glove_changer\glove_changer.cpp" />
+    <ClCompile Include="nerv\features\shared\econ_item_attribute_manager.cpp" />
+    <ClCompile Include="nerv\features\shared\item_schema.cpp" />
+    <ClCompile Include="nerv\features\skin_changer\skin_changer.cpp" />
+    <ClCompile Include="nerv\utils\utils.cpp" />
+    <ClCompile Include="nerv\valve\interfaces\interfaces.cpp" />
+    <ClCompile Include="nerv\valve\interfaces\vtables\cs_usercmd.pb.cc" />
+    <ClCompile Include="nerv\valve\interfaces\vtables\i_localize.cpp" />
+    <ClCompile Include="nerv\valve\interfaces\vtables\mem_alloc.cpp" />
+    <ClCompile Include="nerv\valve\interfaces\vtables\netmessages.pb.cc" />
+    <ClCompile Include="nerv\valve\interfaces\vtables\network_connection.pb.cc" />
+    <ClCompile Include="nerv\valve\interfaces\vtables\networkbasetypes.pb.cc" />
+    <ClCompile Include="nerv\valve\interfaces\vtables\usercmd.pb.cc" />
+    <ClCompile Include="nerv\valve\interfaces\vtables\usermessages.pb.cc" />
+    <ClCompile Include="nerv\valve\modules\modules.cpp" />
+    <ClCompile Include="nerv\valve\schema\schema.cpp" />
+    <ClCompile Include="Backend\Config\CloudConfig.cpp" />
+    <ClCompile Include="Backend\Lua\LuaEngine.cpp" />
+    <ClCompile Include="Backend\Config\Config.cpp" />
+    <ClCompile Include="Backend\Config\Settings.cpp" />
+    <ClCompile Include="Backend\Utilities\Utilities.cpp" />
+    <ClCompile Include="Backend\Utilities\Spotify.cpp" />
+    <ClCompile Include="Backend\Features\Visuals\EventLogger.cpp" />
+    <ClCompile Include="Backend\Misc\Fonts\Fonts.cpp" />
+    <ClCompile Include="Backend\Misc\Fonts\FontAwesomeData.cpp" />
+    <ClCompile Include="Backend\Misc\Textures\Textures.cpp" />
+    <ClCompile Include="imgui\imgui.cpp" />
+    <ClCompile Include="imgui\imgui_demo.cpp" />
+    <ClCompile Include="imgui\imgui_draw.cpp" />
+    <ClCompile Include="imgui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="imgui\imgui_impl_win32.cpp" />
+    <ClCompile Include="imgui\imgui_widgets.cpp" />
+    <ClCompile Include="kiero\kiero.cpp" />
+    <ClCompile Include="kiero\minhook\src\buffer.c" />
+    <ClCompile Include="kiero\minhook\src\hde\hde32.c" />
+    <ClCompile Include="kiero\minhook\src\hde\hde64.c" />
+    <ClCompile Include="kiero\minhook\src\hook.c" />
+    <ClCompile Include="kiero\minhook\src\trampoline.c" />
+    <ClCompile Include="thirdparty\lua\lapi.c" />
+    <ClCompile Include="thirdparty\lua\lauxlib.c" />
+    <ClCompile Include="thirdparty\lua\lbaselib.c" />
+    <ClCompile Include="thirdparty\lua\lcode.c" />
+    <ClCompile Include="thirdparty\lua\lcorolib.c" />
+    <ClCompile Include="thirdparty\lua\lctype.c" />
+    <ClCompile Include="thirdparty\lua\ldblib.c" />
+    <ClCompile Include="thirdparty\lua\ldebug.c" />
+    <ClCompile Include="thirdparty\lua\ldo.c" />
+    <ClCompile Include="thirdparty\lua\ldump.c" />
+    <ClCompile Include="thirdparty\lua\lfunc.c" />
+    <ClCompile Include="thirdparty\lua\lgc.c" />
+    <ClCompile Include="thirdparty\lua\linit.c" />
+    <ClCompile Include="thirdparty\lua\liolib.c" />
+    <ClCompile Include="thirdparty\lua\llex.c" />
+    <ClCompile Include="thirdparty\lua\lmathlib.c" />
+    <ClCompile Include="thirdparty\lua\lmem.c" />
+    <ClCompile Include="thirdparty\lua\loadlib.c" />
+    <ClCompile Include="thirdparty\lua\lobject.c" />
+    <ClCompile Include="thirdparty\lua\lopcodes.c" />
+    <ClCompile Include="thirdparty\lua\loslib.c" />
+    <ClCompile Include="thirdparty\lua\lparser.c" />
+    <ClCompile Include="thirdparty\lua\lstate.c" />
+    <ClCompile Include="thirdparty\lua\lstring.c" />
+    <ClCompile Include="thirdparty\lua\lstrlib.c" />
+    <ClCompile Include="thirdparty\lua\ltable.c" />
+    <ClCompile Include="thirdparty\lua\ltablib.c" />
+    <ClCompile Include="thirdparty\lua\ltm.c" />
+    <ClCompile Include="thirdparty\lua\lundump.c" />
+    <ClCompile Include="thirdparty\lua\lutf8lib.c" />
+    <ClCompile Include="thirdparty\lua\lvm.c" />
+    <ClCompile Include="thirdparty\lua\lzio.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="includes.h" />
+    <ClInclude Include="cs2\legitbot.h" />
+    <ClInclude Include="cs2\bhop.h" />
+    <ClInclude Include="cs2\menu_input.h" />
+    <ClInclude Include="cs2\walkbot\walkbot.h" />
+    <ClInclude Include="cs2\walkbot\nav\micropather.h" />
+    <ClInclude Include="cs2\walkbot\nav\nav_area.h" />
+    <ClInclude Include="cs2\walkbot\nav\nav_buffer.h" />
+    <ClInclude Include="cs2\walkbot\nav\nav_file.h" />
+    <ClInclude Include="cs2\walkbot\nav\nav_hiding_spot.h" />
+    <ClInclude Include="cs2\walkbot\nav\nav_structs.h" />
+    <ClInclude Include="cs2\view.h" />
+    <ClInclude Include="cs2\streamer_mode.h" />
+    <ClInclude Include="cs2\antiflash.h" />
+    <ClInclude Include="cs2\night_mode.h" />
+    <ClInclude Include="cs2\skybox_tint.h" />
+    <ClInclude Include="cs2\world_modulation.h" />
+    <ClInclude Include="cs2\world_modulation_types.h" />
+    <ClInclude Include="cs2\thirdperson.h" />
+    <ClInclude Include="cs2\tp_glitch.h" />
+    <ClInclude Include="cs2\chams.h" />
+    <ClInclude Include="cs2\chams_types.h" />
+    <ClInclude Include="cs2\agent_changer.h" />
+    <ClInclude Include="cs2\tracers.h" />
+    <ClInclude Include="cs2\esp.h" />
+    <ClInclude Include="cs2\memory.h" />
+    <ClInclude Include="cs2\game_state.h" />
+    <ClInclude Include="cs2\math.h" />
+    <ClInclude Include="cs2\offsets.h" />
+    <ClInclude Include="cs2\weapons.h" />
+    <ClInclude Include="cs2\players.h" />
+    <ClInclude Include="cs2\model_changer.h" />
+    <ClInclude Include="Frontend\Framework\MenuFramework.h" />
+    <ClInclude Include="Frontend\Menu\Menu.h" />
+    <ClInclude Include="Frontend\Menu\SkinsTab.h" />
+    <ClInclude Include="Frontend\Menu\PlayersTab.h" />
+    <ClInclude Include="Frontend\Menu\LuaTab.h" />
+    <ClInclude Include="Frontend\Steam\SteamAvatars.h" />
+    <ClInclude Include="nerv\config.hpp" />
+    <ClInclude Include="nerv\nerv_init.hpp" />
+    <ClInclude Include="nerv\main.hpp" />
+    <ClInclude Include="Frontend\Renderer\Renderer.h" />
+    <ClInclude Include="Frontend\Renderer\color.h" />
+    <ClInclude Include="Backend\Globalincludes.h" />
+    <ClInclude Include="Backend\Config\CloudConfig.h" />
+    <ClInclude Include="Backend\Lua\LuaEngine.h" />
+    <ClInclude Include="Backend\Config\Config.h" />
+    <ClInclude Include="Backend\Config\Settings.h" />
+    <ClInclude Include="Backend\Utilities\Utilities.h" />
+    <ClInclude Include="Backend\Utilities\Spotify.h" />
+    <ClInclude Include="Backend\Features\Visuals\EventLogger.h" />
+    <ClInclude Include="Backend\Misc\singleton.h" />
+    <ClInclude Include="Backend\Misc\Fonts\Fonts.h" />
+    <ClInclude Include="Backend\Misc\Textures\Textures.h" />
+    <ClInclude Include="Backend\ValveSDK\Vector.h" />
+    <ClInclude Include="Backend\GameData\cs2_game_data.h" />
+    <ClInclude Include="imgui\imconfig.h" />
+    <ClInclude Include="imgui\imgui.h" />
+    <ClInclude Include="imgui\imgui_impl_dx11.h" />
+    <ClInclude Include="imgui\imgui_impl_win32.h" />
+    <ClInclude Include="imgui\imgui_internal.h" />
+    <ClInclude Include="kiero\kiero.h" />
+    <ClInclude Include="kiero\minhook\include\MinHook.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="kiero\minhook\dll_resources\MinHook.def" />
+    <None Include="tools\gen_game_data.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="kiero\minhook\dll_resources\MinHook.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>
